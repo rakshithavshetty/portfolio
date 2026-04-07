@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rakshitha Shetty Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: black;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+/* GRID BACKGROUND */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0,255,150,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,150,0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+
+nav h2 {
+  color: #00ff99;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* COMMON */
+.underline {
+  width: 100px;
+  height: 3px;
+  background: #00ff99;
+  margin: 10px auto 30px;
+}
+
+/* HERO EXACT STYLE */
+/* HERO BASE */
+.hero {
+  text-align: center;
+  padding-top: 120px;
+  animation: fadeIn 1s ease;
+}
+/* CENTER HERO CONTENT */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;   /* instead of height */
+  padding: 0 20px;     /* remove top spacing */
+  text-align: center;
+}
+.typing-text {
+  margin-bottom: 5px;
+}
+
+.name {
+  margin: 5px 0;
+}
+
+.role {
+  margin: 5px 0;
+}
+
+.desc {
+  margin: 15px auto;
+}
+
+.buttons {
+  margin-top: 15px;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+/* TYPING TEXT */
+.typing-text {
+  color: #00ff99;
+  font-size: 1.2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #00ff99;
+  width: 0;
+  animation: typing 3s steps(30) forwards, blink 0.7s infinite;
+}
+
+/* NAME GLOW */
+.name {
+  font-size: 4rem;
+  color: #00ff99;
+  margin-top: 10px;
+  animation: glow 2s infinite alternate;
+}
+
+/* ROLE */
+.role {
+  font-size: 2rem;
+  margin-top: 10px;
+  animation: slideUp 1s ease forwards;
+}
+
+/* DESCRIPTION */
+.desc {
+  max-width: 600px;
+  margin: 20px auto;
+  opacity: 0;
+  animation: fadeUp 1.5s ease forwards;
+  animation-delay: 1s;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 25px;
+  opacity: 0;
+  animation: fadeUp 2s ease forwards;
+  animation-delay: 1.5s;
+}
+
+.btn {
+  padding: 12px 25px;
+  margin: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.primary {
+  background: #00ff99;
+  color: black;
+}
+
+.outline {
+  border: 1px solid #00ff99;
+  color: #00ff99;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00ff99;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+  margin-top: 30px;
+  opacity: 0;
+  animation: fadeUp 2.5s ease forwards;
+  animation-delay: 2s;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 10px;
+  border: 1px solid #00ff99;
+  padding: 12px;
+  border-radius: 50%;
+  color: #00ff99;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #00ff99;
+  color: black;
+  transform: translateY(-5px);
+}
+
+/* ANIMATIONS */
+@keyframes typing {
+  to { width: 260px; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00ff99; }
+  to { text-shadow: 0 0 30px #00ff99; }
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* ABOUT */
+.about, .skills, .projects, .contact {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.highlight {
+  color: #00ff99;
+}
+.about-advanced {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.about-text {
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.7;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 60px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,255,150,0.2);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 15px rgba(0,255,150,0.3);
+}
+
+.feature-card i {
+  font-size: 28px;
+  color: #00ff99;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+}
+
+/* SKILLS */
+.skills {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.skills h1 {
+  color: #00ff99;
+}
+
+.skills-sub {
+  opacity: 0.7;
+  margin-bottom: 40px;
+}
+
+.skill-category {
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: left;
+}
+
+.skill-category h2 {
+  color: #00ff99;
+  margin-bottom: 15px;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background: rgba(255,255,255,0.05);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,255,150,0.2);
+  transition: 0.3s;
+}
+
+.skill-card:hover {
+  box-shadow: 0 0 15px rgba(0,255,150,0.3);
+}
+
+.skill-card p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.bar {
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  margin-top: 8px;
+  border-radius: 10px;
+}
+
+.fill {
+  height: 100%;
+  background: #00ff99;
+  border-radius: 10px;
+}
+
+/* TECH TAGS */
+.tech-title {
+  margin-top: 50px;
+}
+
+.tech-tags {
+  margin-top: 15px;
+}
+
+.tech-tags span {
+  display: inline-block;
+  border: 1px solid #00ff99;
+  padding: 6px 12px;
+  margin: 5px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* PROJECTS */
+.projects {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.projects h1 {
+  color: #00ff99;
+}
+
+.projects-sub {
+  opacity: 0.7;
+  margin-bottom: 40px;
+}
+
+.project-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(0,255,150,0.2);
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0,255,150,0.3);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.project-content h3 {
+  margin-bottom: 10px;
+}
+
+.project-content p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.tags {
+  margin-top: 10px;
+}
+
+.tags span {
+  display: inline-block;
+  border: 1px solid #00ff99;
+  padding: 4px 10px;
+  margin: 5px 5px 0 0;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+/* GITHUB BUTTON */
+.github-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 15px;
+  border: 1px solid #00ff99;
+  color: #00ff99;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+.github-btn:hover {
+  background: #00ff99;
+  color: black;
+}
+/* CONTACT */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: transparent;
+  border: 1px solid #00ff99;
+  color: white;
+}
+
+button {
+  background: #00ff99;
+  border: none;
+  padding: 12px;
+  width: 100%;
+}
+
+/* CONTACT */
+.contact {
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.contact-sub {
+  opacity: 0.7;
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.contact-form {
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid #00ff99;
+  color: white;
+  border-radius: 6px;
+}
+
+.contact-form textarea {
+  height: 120px;
+}
+
+.send-btn {
+  width: 100%;
+  padding: 12px;
+  background: #00ff99;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* INFO BOX */
+.contact-info {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  border: 1px solid rgba(0,255,150,0.2);
+}
+
+.map-box {
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(0,255,150,0.2);
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  padding: 50px 20px;
+  border-top: 1px solid rgba(0,255,150,0.2);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.footer-icons a {
+  margin: 10px;
+  display: inline-block;
+  border: 1px solid #00ff99;
+  padding: 10px;
+  border-radius: 50%;
+  color: #00ff99;
+}
+
+.footer-container a {
+  color: white;
+  text-decoration: none;
+}
+
+/* SUBSCRIBE */
+.subscribe-input {
+  padding: 10px;
+  width: 70%;
+  background: transparent;
+  border: 1px solid #00ff99;
+  color: white;
+}
+
+.subscribe-btn {
+  padding: 10px;
+  background: #00ff99;
+  border: none;
+}
+.typing-text {
+  text-align: center;
+}
+
+/* BOTTOM */
+.footer-bottom {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <h2>&lt;/&gt; DevPortfolio</h2>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <p class="typing-text">Hello, I'm </p>
+
+  <h1 class="name">Rakshitha Shetty</h1>
+
+  <h2 class="role">Software Developer</h2>
+
+  <p class="desc">
+   Software Developer focused on building efficient and scalable applications using modern programming technologies.
+    Experienced in developing reliable solutions with strong problem-solving skills, clean architecture, and industry best practices.
+  </p>
+
+  <div class="buttons">
+    <a href="#projects" class="btn primary">View My Work →</a>
+    <a href="#contact" class="btn outline">Get In Touch</a>
+    <a href="Resumef.pdf" download class="btn outline">Download Resume</a>
+  </div>
+
+  <!-- SOCIAL ICONS -->
+  <div class="social-icons">
+    <a href="https://linkedin.com/in/rakshitha-shetty-4404672aa" target="_blank">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <a href="https://github.com/rakshithavshetty" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+
+    <a href="mailto:vrakshithashetty@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+</section>
+<!-- ABOUT -->
+<section class="about" id="about">
+
+  <div class="about-text">
+    <p>
+      Computer Science student with strong foundations in 
+      <span class="highlight">Java, Data Structures, and Algorithms</span>.
+      Currently pursuing <span class="highlight">B.E in Computer Science</span> 
+      with a CGPA of <span class="highlight">8.9</span>.
+    </p>
+
+    <p>
+      Skilled in developing <span class="highlight">web applications</span> using modern technologies,
+      working with databases, and building scalable systems.
+      Familiar with <span class="highlight">Cloud Computing</span> and Computer Networks.
+    </p>
+
+    <p class="quote">
+      "Passionate about building efficient applications and solving real-world problems."
+    </p>
+  </div>
+
+  <!-- CARDS -->
+  <div class="features">
+
+    <div class="feature-card">
+      <i class="fas fa-code"></i>
+      <h3>Clean Code</h3>
+      <p>Writing maintainable, scalable, and efficient code using Java and OOP principles.</p>
+    </div>
+
+    <div class="feature-card">
+      <i class="fas fa-palette"></i>
+      <h3>Modern Development</h3>
+      <p>Building responsive web apps using React, HTML, CSS, and modern frameworks.</p>
+    </div>
+
+    <div class="feature-card">
+      <i class="fas fa-bolt"></i>
+      <h3>Performance</h3>
+      <p>Optimizing applications for speed and better user experience.</p>
+    </div>
+
+    <div class="feature-card">
+      <i class="fas fa-users"></i>
+      <h3>Problem Solving</h3>
+      <p>Strong analytical thinking and DSA skills to solve real-world challenges.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills">
+
+  <h1>Skills & Expertise</h1>
+  <div class="underline"></div>
+  <p class="skills-sub">Proficient in modern technologies and frameworks</p>
+
+  <!-- FRONTEND -->
+  <div class="skill-category">
+    <h2>&lt;/&gt; Frontend</h2>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <p>HTML/CSS <span>95%</span></p>
+        <div class="bar"><div class="fill" style="width:95%"></div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BACKEND -->
+  <div class="skill-category">
+    <h2>🗄 Backend</h2>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <p>Java <span>90%</span></p>
+        <div class="bar"><div class="fill" style="width:90%"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <p>Python <span>70%</span></p>
+        <div class="bar"><div class="fill" style="width:85%"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <p>C <span>75%</span></p>
+        <div class="bar"><div class="fill" style="width:75%"></div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DATABASES -->
+  <div class="skill-category">
+    <h2>💾 Databases</h2>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <p>MySQL <span>85%</span></p>
+        <div class="bar"><div class="fill" style="width:85%"></div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOOLS -->
+  <div class="skill-category">
+    <h2>⚡ Tools</h2>
+    <div class="skill-grid">
+
+      <div class="skill-card">
+        <p>Git <span>90%</span></p>
+        <div class="bar"><div class="fill" style="width:90%"></div></div>
+      </div>
+
+      <div class="skill-card">
+        <p>Linux <span>80%</span></p>
+        <div class="bar"><div class="fill" style="width:80%"></div></div>
+      </div>
+
+    </div>
+  </div>
+  <!-- CORE CONCEPTS -->
+<div class="skill-category">
+  <h2>🧠 Core Concepts</h2>
+  <div class="skill-grid">
+
+    <div class="skill-card">
+      <p>OOP <span>90%</span></p>
+      <div class="bar"><div class="fill" style="width:90%"></div></div>
+    </div>
+
+    <div class="skill-card">
+      <p>Data Structures <span>70%</span></p>
+      <div class="bar"><div class="fill" style="width:85%"></div></div>
+    </div>
+
+    <div class="skill-card">
+      <p>Operating System <span>80%</span></p>
+      <div class="bar"><div class="fill" style="width:80%"></div></div>
+    </div>
+
+    <div class="skill-card">
+      <p>Computer Networks <span>80%</span></p>
+      <div class="bar"><div class="fill" style="width:80%"></div></div>
+    </div>
+
+    <div class="skill-card">
+      <p>Cloud Computing <span>75%</span></p>
+      <div class="bar"><div class="fill" style="width:75%"></div></div>
+    </div>
+
+  </div>
+</div>
+
+  <!-- TECH TAGS -->
+  <h3 class="tech-title">Technologies I Work With</h3>
+  <div class="tech-tags">
+    <span>Java</span>
+    <span>Python</span>
+    <span>React</span>
+    <span>MySQL</span>
+    <span>Git</span>
+    <span>Linux</span>
+    <span>Spring Boot</span>
+    <span>Node.js</span>
+  </div>
+
+</section>
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+
+  <h1>Featured Projects</h1>
+  <div class="underline"></div>
+  <p class="projects-sub">A showcase of my recent work and personal projects</p>
+
+  <div class="project-grid">
+
+    <!-- PROJECT 1 -->
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+      <div class="project-content">
+        <h3>Micro-Service Based Campus Sustainability Tracker </h3>
+        <p>
+           Microservices-based platform to monitor environmental practices in educational institutions.
+          Designed scalable modules for tracking and reporting sustainability metrics.
+        </p>
+
+        <div class="tags">
+          <span>Python</span>
+          <span>Spring Boot</span>
+          <span>Swagger</span>
+          <span>SQL</span>
+          <span>React</span>
+        </div>
+
+        <a href="https://github.com/rakshithavshetty/Microservice-based-Campus-Sustainability-Tracker" target="_blank" class="github-btn">
+          View Code
+        </a>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1554774853-b415df9eeb92">
+      <div class="project-content">
+        <h3>Quiz Application</h3>
+        <p>
+          Java Swing-based quiz application with timer-based MCQs and navigation controls.
+          Implemented real-time answer tracking, auto-submission, and dynamic scoring system.
+        </p>
+
+        <div class="tags">
+          <span>Java</span><span>OOP</span><span>Swing</span>
+        </div>
+
+        <a href="https://github.com/rakshithavshetty/Java-Swing-Online-Quiz-App" target="_blank" class="github-btn">
+          View Code
+        </a>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4">
+      <div class="project-content">
+        <h3>Spotify Clone</h3>
+        <p>
+           MERN stack music streaming platform with queue and volume controls.
+          Includes admin catalog management, in-app chat, and analytics dashboard.
+        </p>
+
+        <div class="tags">
+          <span>React</span><span>Node.js</span><span>MongoDB</span>
+        </div>
+
+        <a href="https://github.com/rakshithavshetty/MusicApp" target="_blank" class="github-btn">
+          View Code
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="contact">
+
+  <h1>Get In Touch</h1>
+  <div class="underline"></div>
+  <p class="contact-sub">Have a project in mind? Let's work together to create something amazing!</p>
+
+  <div class="contact-container">
+
+    <!-- LEFT FORM -->
+    <div class="contact-form">
+      <label>Name</label>
+      <input type="text" placeholder="Your Name">
+
+      <label>Email</label>
+      <input type="email" placeholder="your.email@example.com">
+
+      <label>Message</label>
+      <textarea placeholder="Tell me about your project..."></textarea>
+
+      <button class="send-btn">✈ Send Message</button>
+    </div>
+
+    <!-- RIGHT INFO -->
+    <div class="contact-info">
+
+      <h3>Contact Information</h3>
+
+      <p>📧 vrakshithashetty@gmail.com</p>
+      <p>📍 Karnataka, India</p>
+
+      <div class="map-box">
+        <p>📍 Map Integration</p>
+        <small>Karnataka, India</small>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="footer-container">
+
+    <!-- LEFT -->
+    <div>
+      <h3>DevPortfolio</h3>
+      <p>Building amazing web experiences with modern technologies.</p>
+
+      <div class="footer-icons">
+        <a href="https://github.com/rakshithavshetty" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/rakshithavshetty" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:vrakshithashetty@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <!-- LINKS -->
+    <div>
+      <h4>Quick Links</h4>
+      <p><a href="#">Home</a></p>
+      <p><a href="#about">About</a></p>
+      <p><a href="#skills">Skills</a></p>
+      <p><a href="#projects">Projects</a></p>
+      <p><a href="#contact">Contact</a></p>
+    </div>
+
+    <!-- SUBSCRIBE -->
+    <div>
+      <h4>Stay Updated</h4>
+      <p>Subscribe to get notified about new projects and updates.</p>
+
+      <input type="email" placeholder="Your email" class="subscribe-input">
+      <button class="subscribe-btn">Subscribe</button>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 DevPortfolio. All rights reserved.</p>
+    <p>Made with ❤️ by Rakshitha Shetty</p>
+  </div>
+
+</footer>
+
+</body>
+</html>
